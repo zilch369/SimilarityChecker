@@ -4,7 +4,11 @@ public class SimilarityChecker {
     }
 
     public double calDoubleDiffLengthPoint(String str1, String str2) {
-        return (str1.length() >= str2.length() * 2 || str2.length() >= str1.length() * 2) ? 0.0 : null;
+        return isDoubleDiffLength(str1, str2) ? 0.0 : null;
+    }
+
+    private static boolean isDoubleDiffLength(String str1, String str2) {
+        return str1.length() >= str2.length() * 2 || str2.length() >= str1.length() * 2;
     }
 
     public double calNormalDiffLengthPoint(String str1, String str2) {
@@ -18,7 +22,7 @@ public class SimilarityChecker {
     public double calLengthPoint(String str1, String str2) {
         if (str1.length() == str2.length()) {
             return calSameLengthPoint(str1, str2);
-        } else if (str1.length() >= str2.length() * 2 || str2.length() >= str1.length() * 2) {
+        } else if (isDoubleDiffLength(str1, str2)) {
             return calDoubleDiffLengthPoint(str1, str2);
         } else {
             return calNormalDiffLengthPoint(str1, str2);
