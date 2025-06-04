@@ -20,12 +20,8 @@ public class SimilarityChecker {
     }
 
     public double calLengthPoint(String str1, String str2) {
-        if (str1.length() == str2.length()) {
-            return calSameLengthPoint(str1, str2);
-        } else if (isDoubleDiffLength(str1, str2)) {
-            return calDoubleDiffLengthPoint(str1, str2);
-        } else {
-            return calNormalDiffLengthPoint(str1, str2);
-        }
+        if (str1.length() == str2.length())  return calSameLengthPoint(str1, str2);
+        if (isDoubleDiffLength(str1, str2))  return calDoubleDiffLengthPoint(str1, str2);
+        return calNormalDiffLengthPoint(str1, str2);
     }
 }
