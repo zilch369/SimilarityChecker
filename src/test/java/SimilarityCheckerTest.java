@@ -32,4 +32,13 @@ class SimilarityCheckerTest {
         assertEquals(30, checker.calLengthPoint("AA", "BBE"));
     }
 
+    @Test
+    void testSameAlphaPoint() {
+        assertEquals(40, checker.calAlphaPoint("ASD", "DSA"));
+        assertEquals(0, checker.calAlphaPoint("A", "BB"));
+        assertEquals(40, checker.calAlphaPoint("AAABB", "BA"));
+        assertEquals(20, checker.calAlphaPoint("AA", "AAE"));
+
+    }
+
 }
